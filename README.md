@@ -43,7 +43,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 | ignoreCert | Check the validity of the TLS (SSL) cert when using TLS. <br><br> **Default:** true |
 | token | The long lived token. <br><br> **Default:** `REQUIRED` |
 | useModuleTigger | Use a module trigger to determine if the module should be shown. <br><br> **Default:** false |
-| moduleTriggerTemplate | The template to render when using the Module Trigger.  Must return **true** or **on** |
+| moduleTriggerTemplate | The template to render when using the Module Trigger.  Must return **true** or **on** to display the module.|
 | moduleTriggerEntities | The array of entities to watch for state changes to determine if the moduleTriggerTemplate should be re-rendered. |
 | animationSpeed | The animation speed to use when updating the display of the module. <br><br>**Default:** 3000 |
 | class | The CSS class to add to the module `<div>` to allow for easier CSS selection.  |
