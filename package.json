@@ -1,0 +1,40 @@
+{
+  "name": "MMM-HomeAssistantDisplay",
+  "version": "1.0.0",
+  "description": "Module Base template for create new modules for MagicMirror",
+  "scripts": {
+    "test": "./node_modules/grunt/bin/grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wonderslug/MMM-HomeAssistantDisplay.git"
+  },
+  "keywords": [
+    "magic mirror",
+    "home assistant",
+    "module"
+  ],
+  "author": "Brian Towles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonderslug/MMM-HomeAssistantDisplay/issues"
+  },
+  "homepage": "https://github.com/wonderslug/MMM-HomeAssistantDisplay",
+  "dependencies": {
+    "@mdi/font": "latest",
+    "backoff": "^2.5.0",
+    "homeassistant": "^0.2.0",
+    "homeassistant-ws": "^0.2.1"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-eslint": "latest",
+    "grunt-jsonlint": "latest",
+    "grunt-markdownlint": "latest",
+    "grunt-stylelint": "latest",
+    "grunt-yamllint": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
+    "time-grunt": "latest"
+  }
+}
