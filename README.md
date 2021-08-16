@@ -6,6 +6,7 @@ This is a module to display [Home Assistant](https://www.home-assistant.io/) inf
 Templates allow you to output virtually any HTML you want to in the contents of the module.  It allows you to use the standard Jinja2 templating engine along with all of the Home Assistant custom template functions to be able to format the output of the module in whatever way you want to display it.
 
 # Table of Contents
+* [How to use](#how-to-use)
 * [Features](#features)
 * [Configuration Options](#configuration-options)
     * [Module Configuration Options](#module-configuration-options)
@@ -25,6 +26,11 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 * Custom CSS classes added to the module and every section.
 * Targeted rerender of templates only on state change of watched entity.
 * Material Design icons embeded in module to use with output.
+
+### How to use
+1. Clone this repo into your Magic Mirrors modules directory with the following command: git clone https://github.com/wonderslug/MMM-HomeAssistantDisplay.git.
+2. Install all the npm modules with *npm install*.
+3. Update your Magic Mirror Configto setup a Module Instance.  See the configuration options and examples below.
 
 ### Configuration Options
 #### Module Configuration Options
