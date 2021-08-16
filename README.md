@@ -25,7 +25,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 * Auto reconnect to Home Assistant when connection is lost.
 * Custom CSS classes added to the module and every section.
 * Targeted rerender of templates only on state change of watched entity.
-* Material Design icons embeded in module to use with output.
+* Material Design icons embedded in module to use with output.
 
 ### How to use
 1. Clone this repo into your Magic Mirrors modules directory with the following command: git clone https://github.com/wonderslug/MMM-HomeAssistantDisplay.git.
