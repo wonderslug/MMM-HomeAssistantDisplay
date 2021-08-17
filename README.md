@@ -56,6 +56,10 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 | displayTemplate | The template to send to Home Assistant to render.  The results of the render will be displayed as the contents of this section in the module. |
 | class | The CSS class name to add to the `<div>` surrounding this section of the module. |
 
+#### Note
+
+When working on your templates you can always check them in the [Home Assisant Template Editor](https://my.home-assistant.io/redirect/developer_template).
+
 ### Examples
 
 #### Simple Hiding
