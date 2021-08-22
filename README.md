@@ -261,7 +261,7 @@ perimeterWindows.forEach((item, i) => {
 The MIT License (MIT)
 =====================
 
-Copyright © 2016 PtrBld
+Copyright © 2021 Brian Towles
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
