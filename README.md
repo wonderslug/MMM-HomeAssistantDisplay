@@ -58,7 +58,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 
 #### Note
 
-When working on your templates you can always check them in the [Home Assisant Template Editor](https://my.home-assistant.io/redirect/developer_template).
+When working on your templates you can always check them in the [Home Assistant Template Editor](https://my.home-assistant.io/redirect/developer_template).
 
 ### Examples
 
