@@ -77,7 +77,7 @@ This sets up a simple module that only displays the module when the binary_senso
     config: {
         host: "YOUR_HOME_ASSISTANT_HOST",
         token: "YOUR_HOME_ASSISTANT_TOKEN",
-        port: 8123
+        port: 8123,
         useTLS: true,
         title: "To the Curb",				
         useModuleTigger: true,
@@ -113,7 +113,7 @@ This example pulls the info from a media player entity in Home Assistant.  It on
     config: {
         host: "YOUR_HOME_ASSISTANT_HOST",
         token: "YOUR_HOME_ASSISTANT_TOKEN",
-        port: 8123
+        port: 8123,
         useTLS: true,
         title: "Playing in Master Bedroom",
         useModuleTigger: true,
@@ -154,7 +154,7 @@ This example will show a complex template logic that is always displayed because
     config: {
         host: "YOUR_HOME_ASSISTANT_HOST",
         token: "YOUR_HOME_ASSISTANT_TOKEN",
-        port: 8123
+        port: 8123,
         useTLS: true,				
         title: "Security",
         class: "security",
@@ -245,7 +245,7 @@ perimeterWindows.forEach((item, i) => {
     config: {
         host: "YOUR_HOME_ASSISTANT_HOST",
         token: "YOUR_HOME_ASSISTANT_TOKEN",
-        port: 8123
+        port: 8123,
         useTLS: true,
         title: "Open Windows",
         useModuleTigger: false,
