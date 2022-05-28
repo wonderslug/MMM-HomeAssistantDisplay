@@ -142,7 +142,7 @@ async function backoffWSConnection(identifier, connectionConfig) {
 	});
 
 	call.retryIf(function(err) {
-		 return err.error.code == 'ECONNREFUSED'; 
+		 return true; 
 	});
 
 	call.setStrategy(new backoff.ExponentialStrategy({
@@ -180,6 +180,7 @@ async function reconnectWebsocket(payload) {
 		host: payload.host,
 		port: payload.port,
 		token: payload.token,
+		useTLS: payload.useTLS,
 		ignoreCert: payload.ignoreCert
 	};
 	for (const connection in this.connections) {
