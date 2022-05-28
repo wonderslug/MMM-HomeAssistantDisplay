@@ -1,6 +1,6 @@
 {
   "name": "MMM-HomeAssistantDisplay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module Base template for create new modules for MagicMirror",
   "scripts": {
     "test": "./node_modules/grunt/bin/grunt"
