@@ -142,6 +142,8 @@ This example pulls the info from a media player entity in Home Assistant.  It on
 
 #### Simple example
 
+![Media](images/simpleExample.png)
+
 ```javascript
 {
         module: 'MMM-HomeAssistantDisplay',
