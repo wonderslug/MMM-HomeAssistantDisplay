@@ -238,7 +238,8 @@ perimeterWindows.forEach((item, i) => {
         {% if states.${item.entity}.state == "on" %}<i class='mdi mdi-window-open'></i> ${item.name}{% endif %}
         `,
         class: "window"
-})
+    });
+});
 ....
 // The module entry
 {       
