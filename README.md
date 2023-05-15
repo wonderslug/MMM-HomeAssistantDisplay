@@ -54,7 +54,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 |---|---|
 | triggerEntities | The array of entities to watch for state changes to determine if this sections displayTemplate should be re-rendered. |
 | displayTemplate | The template to send to Home Assistant to render.  The results of the render will be displayed as the contents of this section in the module. |
-| class | The CSS class name to add to the `<div>` surrounding this section of the module. |
+| class | The CSS class name to add to the `<div>` surrounding this section of the module. This is a name you choose yourself, for example "HAValues". You can then style this section by adding a .HAvalues-section in custom.css. |
 
 #### Note
 
@@ -138,6 +138,28 @@ This example pulls the info from a media player entity in Home Assistant.  It on
         ]
     },
 },
+```
+
+#### Simple example
+
+![Media](images/simpleExample.png)
+
+```javascript
+{
+        module: 'MMM-HomeAssistantDisplay',
+        position: 'top_right',
+        config: {
+            host: "192.168.1.10",
+            token: "..."
+            port: 8123,
+            useTLS: false,
+                class: "HAvalues", 
+                sections: [{
+                    displayTemplate: `
+                        <i class='mdi mdi-email'></i> Post: {{states('sensor.postleverans')}}<br>
+                }]
+         }
+}
 ```
 
 
