@@ -55,6 +55,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 | triggerEntities | The array of entities to watch for state changes to determine if this sections displayTemplate should be re-rendered. |
 | displayTemplate | The template to send to Home Assistant to render.  The results of the render will be displayed as the contents of this section in the module. |
 | class | The CSS class name to add to the `<div>` surrounding this section of the module. This is a name you choose yourself, for example "HAValues". You can then style this section by adding a .HAvalues-section in custom.css. |
+| refreshTimer | Set a refresh timeout in seconds to re-render this section's displayTemplate, regardless of whether or not an entity has changed states. |
 
 #### Note
 

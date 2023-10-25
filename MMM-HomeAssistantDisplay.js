@@ -52,6 +52,13 @@ Module.register("MMM-HomeAssistantDisplay", {
 						entity: section.triggerEntities[entity]
 					});
 				}
+				// Set up a timer to trigger re-rendering outside of any entity state update
+				if (section.refreshTimer) {
+					setInterval(()=> {
+						this.renderTemplates("timeout");
+						this.updateDom();
+					}, section.refreshTimer * 1000);
+				}
 			}
 		}
 		this.renderTemplates("foo");
