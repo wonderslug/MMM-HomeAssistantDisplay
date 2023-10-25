@@ -57,7 +57,7 @@ Module.register("MMM-HomeAssistantDisplay", {
 					setInterval(()=> {
 						this.renderTemplates("timeout");
 						this.updateDom();
-					}, section.refreshTimer);
+					}, section.refreshTimer * 1000);
 				}
 			}
 		}
