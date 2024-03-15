@@ -150,14 +150,15 @@ This example pulls the info from a media player entity in Home Assistant.  It on
         module: 'MMM-HomeAssistantDisplay',
         position: 'top_right',
         config: {
-            host: "192.168.1.10",
-            token: "..."
+            host: "YOUR_HOME_ASSISTANT_HOST",
+            token: "YOUR_HOME_ASSISTANT_TOKEN",
             port: 8123,
             useTLS: false,
                 class: "HAvalues", 
                 sections: [{
                     displayTemplate: `
                         <i class='mdi mdi-email'></i> Post: {{states('sensor.postleverans')}}<br>
+                    `
                 }]
          }
 }
