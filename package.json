@@ -33,8 +33,8 @@
     "grunt-markdownlint": "latest",
     "grunt-stylelint": "latest",
     "grunt-yamllint": "latest",
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^34.0.0",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
     "time-grunt": "latest"
   }
 }
