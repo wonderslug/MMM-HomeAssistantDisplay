@@ -28,8 +28,15 @@ Templates allow you to output virtually any HTML you want to in the contents of 
 * Material Design icons embedded in module to use with output.
 
 ### How to use
-1. Clone this repo into your Magic Mirrors modules directory with the following command: git clone https://github.com/wonderslug/MMM-HomeAssistantDisplay.git.
-2. Install all the npm modules with *npm install*.
+1. Clone this repo into your Magic Mirrors modules directory with the following command:
+```bash
+git clone https://github.com/wonderslug/MMM-HomeAssistantDisplay.git
+```
+.
+2. Install all the npm modules with:
+```bash
+npm install
+```
 3. Update your Magic Mirror Configto setup a Module Instance.  See the configuration options and examples below.
 
 ### Configuration Options
