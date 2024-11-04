@@ -15,7 +15,7 @@ Templates allow you to output virtually any HTML you want to in the contents of 
     * [Simple Hiding](#simple-hiding)
     * [Media Info when Playing](#media-info-when-playing)
     * [Always Displayed with Complex Template](#always-displayed-with-complex-template)
-    * [Programatic Sections](#programatic-sections)
+    * [Programmatic Sections](#programmatic-sections)
 * [License](#license)    
 
 ### Features:
@@ -219,9 +219,9 @@ This example will show a complex template logic that is always displayed because
 ```        
 
 
-#### Programatic Sections
+#### Programmatic Sections
 
-Programatic setting of sections from long list for always displayed module:
+Programmatic setting of sections from long list for always displayed module:
 
 This shows how you can use code to set the configuration for the module.  It takes a long list of entities to watch and sets each of them as a section of the module to display only when opened.
 
