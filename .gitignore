@@ -4,3 +4,4 @@ npm-debug.log
 package-lock.json
 pm2.json
 workspace.code-workspace
+.DS_Store
