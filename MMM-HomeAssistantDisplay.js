@@ -147,7 +147,12 @@ Module.register("MMM-HomeAssistantDisplay", {
 		if (payload.identifier === this.identifier) {
 			switch (notification) {
 			case "MODULE_DISPLAY_RENDERED":
-				this.displayModule = payload.render.toLowerCase() === "true" || payload.render.toLowerCase() === "on";
+				//	this.displayModule = payload.render.toLowerCase() === "true" || payload.render.toLowerCase() === "on";
+				if (payload.render.toLowerCase() === "true" || payload.render.toLowerCase() === "on"){
+					this.displayModule = true;
+				else { 
+					this.displayModule = false;
+				}			
 				this.updateDom();
 				break;
 			case "CHANGED_STATE":
