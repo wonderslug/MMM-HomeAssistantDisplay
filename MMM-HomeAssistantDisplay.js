@@ -15,7 +15,8 @@ Module.register("MMM-HomeAssistantDisplay", {
 		ignoreCert: true,
 		token: "",
 		debuglogging: false,
-		useModuleTigger: false,
+		useModuleTrigger: false, // Corrected typo: useModuleTigger -> useModuleTrigger
+		useModuleTigger: false, // For backwards compatibility
 		moduleTriggerTemplate: "",
 		moduleTriggerEntities: false,
 		animationSpeed: 3000,
@@ -32,7 +33,7 @@ Module.register("MMM-HomeAssistantDisplay", {
 		this.sendSocketNotification("CONNECT", this.config);
 
 		// Setup the watched entity for the module display
-		if (this.config.useModuleTigger && this.config.moduleTriggerEntities) {
+		if ((this.config.useModuleTrigger || this.config.useModuleTigger) && this.config.moduleTriggerEntities) { 
 			for (const entity in this.config.moduleTriggerEntities) {
 				this.sendSocketNotification("SET_WATCHED_ENTITY", {
 					identifier: this.identifier,
@@ -54,7 +55,7 @@ Module.register("MMM-HomeAssistantDisplay", {
 				}
 				// Set up a timer to trigger re-rendering outside of any entity state update
 				if (section.refreshTimer) {
-					setInterval(()=> {
+					setInterval(() => {
 						this.renderTemplates("timeout");
 						this.updateDom();
 					}, section.refreshTimer * 1000);
@@ -100,6 +101,13 @@ Module.register("MMM-HomeAssistantDisplay", {
 	},
 
 	getHeader: function () {
+		// If the module is configured to use a trigger to control its visibility,
+		// and the trigger currently indicates the module should be hidden,
+		// then do not return a title, so no header is rendered.
+		if ((this.config.useModuleTrigger || this.config.useModuleTigger) && !this.displayModule) {
+			return null;
+		}
+		// Otherwise, return the configured title.
 		return this.config.title;
 	},
 
@@ -127,7 +135,7 @@ Module.register("MMM-HomeAssistantDisplay", {
 	},
 
 	renderTemplates: function (causingEntity) {
-		if (this.config.useModuleTigger && this.config.moduleTriggerTemplate) {
+		if ((this.config.useModuleTrigger || this.config.useModuleTigger) && this.config.moduleTriggerTemplate) { 
 			this.sendSocketNotification("RENDER_MODULE_DISPLAY_TEMPLATE", {
 				identifier: this.identifier,
 				template: this.config.moduleTriggerTemplate
@@ -146,29 +154,29 @@ Module.register("MMM-HomeAssistantDisplay", {
 	socketNotificationReceived: function (notification, payload) {
 		if (payload.identifier === this.identifier) {
 			switch (notification) {
-			case "MODULE_DISPLAY_RENDERED":
-			
-				if (payload.render.toLowerCase() === "true" || payload.render.toLowerCase() === "on"){
-					this.displayModule = true;
-				}else { 
-					this.displayModule = false;
-				}						
-				
-				this.updateDom();
-				break;
-			case "CHANGED_STATE":
-				this.renderTemplates(payload.cause);
-				this.updateDom();
-				break;
-			case "SECTION_DISPLAY_RENDERED":
-				this.config.sections[payload.section].render = payload.render;
-				this.updateDom();
-				break;
-			case "HASSWS_DISCONNECTED":
-				this.sendSocketNotification("RECONNECT_WS", this.config);
-				break;
-			default:
-				break;
+				case "MODULE_DISPLAY_RENDERED":
+
+					if (payload.render.toLowerCase() === "true" || payload.render.toLowerCase() === "on") {
+						this.displayModule = true;
+					} else {
+						this.displayModule = false;
+					}
+
+					this.updateDom();
+					break;
+				case "CHANGED_STATE":
+					this.renderTemplates(payload.cause);
+					this.updateDom();
+					break;
+				case "SECTION_DISPLAY_RENDERED":
+					this.config.sections[payload.section].render = payload.render;
+					this.updateDom();
+					break;
+				case "HASSWS_DISCONNECTED":
+					this.sendSocketNotification("RECONNECT_WS", this.config);
+					break;
+				default:
+					break;
 			}
 		}
 	}
